@@ -1,32 +1,19 @@
 import React from 'react';
 import './App.css';
-import SideNavPage from "./components/components/Sidebar";
-import Header from "./components/components/Header";
-import Content from "./components/Content";
-import styled from 'styled-components';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
+import LandingPage from "./components/LandingPage";
+import Profile from "./components/components/Profile";
 
-const Wrapper = styled.div`
-   display:flex;
-   flex-direction:row;
-
-   .alt-first{
-   }
-   .alt-second{
-     position:absolute;
-   }
-`;
 
 function App() {
   return (
   <>
-    <Wrapper>
-      <SideNavPage />
-      <Header/>
-      <div className="alt-second">
-        <Content />
-      </div>
-      
-    </Wrapper>
+    <BrowserRouter>
+      <Switch>
+         <Route path="/Home" component={LandingPage} />
+         <Route path="/profile" component={Profile} />
+      </Switch>
+    </BrowserRouter>
   </>
   );
 }

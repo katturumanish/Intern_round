@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Avatar from '@material-ui/core/Avatar';
-import { makeStyles } from '@material-ui/core/styles';
 import EmailIcon from '@material-ui/icons/Email';
 import PersonIcon from '@material-ui/icons/Person';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -14,7 +13,7 @@ import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
 
 const Div = styled.div`
   width: 50%;
-  max-width: 300px;
+  max-width: 250px;
   background: black;
   height:700px;
   box-sizing: border-box;
@@ -28,16 +27,33 @@ const Div = styled.div`
     width:20%;
     max-width: 10px;
   }
+  .alt-name{
+    display:flex;
+    width:250px;
+    color: #586671;
+  }
+  .alt-label{
+    padding:10px;
+    position: relative;
+    left:4px;
+  }
+
+  .alt-options{
+    display:flex;
+    position:relative;
+    left:10px;
+    padding: 0px 10px 10px 0px;
+    color: #586671;
+  }
+  .alt-optlabel{
+    position:relative;
+    left:15px;
+    width:100px;
+    color: #586671;
+    font-size:14px;
+  }
 `;
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
 
 const UserWrapper = styled.div`
     margin: 10px 20px 20px 20px;
@@ -47,48 +63,47 @@ const UserWrapper = styled.div`
 
 
 export default function SideNavPage(){
-  const classes = useStyles();
   return(
     <Div>
       <br></br>
         <UserWrapper>
-          <div className={classes.root}>
+          <div className="alt-name">
            <Avatar label="kasturi" alt="" src="https://s3.amazonaws.com/uifaces/faces/twitter/adellecharles/128.jpg"/>
-           <label>Kasturi Manish</label>
-           <EmailIcon />
+           <label className="alt-label">Kasturi Manish</label>
+           <EmailIcon className="alt-label"/>
           </div>
           <br></br>
-          <div className={classes.root}>
+          <div className="alt-options">
             <PersonIcon/>
-            <label>Profile</label>
+            <div className="alt-optlabel">Profile</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <DashboardIcon />
-            <label>Dashboard</label>
+            <div className="alt-optlabel">Dashboard</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <ChromeReaderModeIcon/>
-            <label>Resume Builder</label>
+            <div className="alt-optlabel">Resume Builder</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <PeopleIcon/>
-            <label>Community</label>
+            <div className="alt-optlabel">Community</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <AppsIcon/>
-            <label>Resources</label>
+            <div className="alt-optlabel">Resources</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <LiveHelpIcon />
-            <label>FAQ</label>
+            <div className="alt-optlabel">FAQ</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <ContactsIcon/>
-            <label>Contact</label>
+            <div className="alt-optlabel">Contact</div>
           </div>
-          <div className={classes.root}>
+          <div className="alt-options">
             <AccountBalanceWalletIcon/>
-            <label>Referral Program</label>
+            <div className="alt-optlabel">Referral Program</div>
           </div>
         </UserWrapper>     
     </Div>

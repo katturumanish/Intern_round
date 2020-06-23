@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import {Link} from "react-router-dom";
 
 const HeaderWrapper = styled.header`
-   height: 150px;
+   height: 120px;
    width: 100%;
    box-sizing: border-box;
    display: flex;
@@ -12,14 +13,47 @@ const HeaderWrapper = styled.header`
    padding: 0 16px;
    position: relative;
    top: 0;
-   left:300px;
+   left:250px;
    background: #eeeeee;
    background-image: linear-gradient(to right, #3d3b36, #3d3b36);
 
-   
-.alt-t{
-    padding: 20px 20px 20px 20px;
-}
+   .alt-t{
+       padding: 20px 20px 20px 20px;
+   }
+   .alt-button{
+       position:relative;
+       left:600px;
+       height:30px;
+       font-size:12px;
+   }
+   .alt-text{
+       position:relative;
+       left:10px;
+       font-size:12px;
+   }
+   .alt-textName{
+       position:relative;
+       left:10px;
+       font-size:18px;
+       color:#9db4c3;
+       font-weight:bold;
+   }
+   .flex-container{
+       display:flex;
+   }
+   .alt-btn{
+       position:relative;
+       left:10px;
+       font-size:12px;
+       background: #3d3b36;
+       border-color: #3d3b36;
+       border-style: none;
+       cursor:pointer;
+       color: blue;
+       font-weight: bold;
+       z-index:9999999;
+   }
+ 
 `; 
 
 const Div = styled.div`
@@ -37,31 +71,11 @@ float:left;
 
 
 .alt-t3{
-    width:800px;
+    width:300px;
     padding:0 0 0 600px;
 }
 `;
 
-const H6 = styled.h6`
-   margin: 0px 0px;
-   padding: 0 0 0px 30px;
-
-.alt-t1{
-    display: flex;
-    padding: 0 0 10px 0px;
-}
-`;
-
-const H4 = styled.h4`
-   margin: 0px 0px;
-   display:flex;
-   flex-direction:row;
-
-   .alt-t3{
-    width:400px;
-    padding:0 0 0 600px;
-   }
-`;
 
 export default function header(){
     
@@ -71,19 +85,17 @@ export default function header(){
               <Avatar className="alt-img"src=""/>
             </Div>
             <div className="alt-t">
-                    <H6>Edit
-                    <div className="alt-t1">
-                     <H4>Gordon Fitzgerald
-                      <div className="alt-t3">
-                        <Button variant="contained" color="primary">
-                           Upload Resume
-                        </Button>
-                      </div>
-                     </H4>
-                    </div>
-                    </H6>
-                    <H6>No Location Needed</H6>
-                <h6>Description(in your words)</h6>
+                <Link to="/profile" className="alt-btn">Edit</Link>
+                <div className="flex-container">
+                  <div>
+                    <div className="alt-textName">Gordon Fitzgerald </div>
+                    <div className="alt-text">No Location Needed</div>
+                  </div>
+                   <Button className="alt-button" variant="contained" color="primary">
+                     Upload Resume
+                   </Button>
+                </div>
+                <div style={{top:"10px"}} className="alt-text">Description(in your words)</div>
             </div>
         </HeaderWrapper>
     )
